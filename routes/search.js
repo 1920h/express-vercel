@@ -1,7 +1,7 @@
 const express = require('express')
-const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
-const uploadImage = require('../utils').uploadFile
+// const multer = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+// const uploadImage = require('../utils').uploadFile
 const userinfo = require('../modules').userInfo
 const edgeLike = require('../modules').edgeLike
 const follower = require('../modules').follower
@@ -61,13 +61,13 @@ router.post('/getEdgeLike', (req, res) => {
 
 })
 
-router.post('/uploadImage', upload.single('avatar'), (req, res) => {
-    console.log("upload")
-    const files = req.file;
-    console.log('files', files, '5')
-    uploadImage(files.path, files.originalname)
-    res.send({ msg: "ok" })
-})
+// router.post('/uploadImage', upload.single('avatar'), (req, res) => {
+//     console.log("upload")
+//     const files = req.file;
+//     console.log('files', files, '5')
+//     uploadImage(files.path, files.originalname)
+//     res.send({ msg: "ok" })
+// })
 
 router.post('/uploadBase64', (req, res) => {
 
