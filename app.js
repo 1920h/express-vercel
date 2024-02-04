@@ -63,7 +63,8 @@ app.use(function(err, req, res, next) {
   res.send({"msg":"error"});
 });
 
-mongoose.connect("mongodb://hbw:383711651%40hbw@43.136.65.128:27016/rose?authSource=admin").then(res=>console.log('连接成功')).catch(err=>console.log('连接错误',err))
+// mongoose.connect("mongodb://hbw:383711651%40hbw@43.136.65.128:27016/rose?authSource=admin").then(res=>console.log('连接成功')).catch(err=>console.log('连接错误',err))
+mongoose.connect(process.env.MONGODB_URI).then(res=>console.log('连接成功')).catch(err=>console.log('连接错误',err))
 
 
 module.exports = app;
